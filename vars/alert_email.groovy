@@ -10,7 +10,7 @@ def notifyRestartFailure(emailList) {
         presendScript: """msg.addHeader("X-Priority", "1 (Highest)"); msg.addHeader("Importance", "High");""",
         subject: subject,
         body: '''${JELLY_SCRIPT, template="html-with-health-and-console"}''',
-        //recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
         to: emailList
     )
 }
